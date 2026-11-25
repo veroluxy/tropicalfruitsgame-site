@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Veroluxy LLC — Empresa de diseño, fabricación y distribución en Doral, Florida, y editora de las aplicaciones PeliLatina, Reel to Home y Tropical Fruits." />
+<link rel="icon" href="data:," />
+<title>Veroluxy LLC — Doral, Florida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f7f9; --surface:#ffffff; --surface-2:#eef1f5;
+    --ink:#132439; --ink-2:#43566e; --muted:#6b7d94;
+    --line:#dde3ea; --navy:#0e2a47; --navy-2:#14365c;
+    --accent:#e85d1a; --accent-ink:#c24e12; --accent-soft:#fdeee6;
+    --green:#177245; --green-soft:#e6f4ec;
+    --radius:14px; --radius-sm:10px;
+    --shadow:0 10px 30px rgba(14,42,71,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0a1322; --surface:#101e33; --surface-2:#16283f;
+      --ink:#eaf0f8; --ink-2:#b9c9dc; --muted:#8ea3bc;
+      --line:#233650; --navy:#0e2a47; --navy-2:#1b4066;
+      --accent:#ff7a33; --accent-ink:#ff9a5c; --accent-soft:#2b1d14;
+      --green:#4cc38a; --green-soft:#12291e;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brand{font-family:"Archivo",system-ui,sans-serif;letter-spacing:-.02em}
+  a{color:var(--accent-ink)}
+  button,[role="button"],summary,select,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;gap:16px;min-height:64px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);font-weight:900;font-size:1.05rem;white-space:nowrap}
+  .mark{width:38px;height:38px;border-radius:9px;background:var(--navy);display:grid;place-items:center;flex:none}
+  @media (prefers-color-scheme: dark){.mark{background:var(--navy-2)}}
+  .mark svg{display:block}
+  .brand small{display:block;font-family:"Public Sans",sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  nav.main{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+  nav.main a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:.92rem;padding:10px 12px;border-radius:8px;min-height:44px;display:inline-flex;align-items:center}
+  nav.main a:hover{background:var(--surface-2);color:var(--ink)}
+  nav.main a.cta{background:var(--accent);color:#fff}
+  nav.main a.cta:hover{background:var(--accent-ink);color:#fff}
+  @media (max-width:720px){ nav.main a:not(.cta){display:none} .brand small{display:none} }
+
+  /* Hero */
+  .hero{background:var(--navy);color:#eef3f9;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:64px solid rgba(232,93,26,.22);pointer-events:none}
+  .hero::before{content:"";position:absolute;right:60px;bottom:-190px;width:300px;height:300px;border-radius:50%;border:44px solid rgba(255,255,255,.06);pointer-events:none}
+  .hero-in{padding:64px 0 56px;position:relative;z-index:1;max-width:760px}
+  .hero .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);color:#ffd9c4;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+  .hero .kicker i{width:8px;height:8px;border-radius:50%;background:#4cc38a;display:inline-block}
+  .hero h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.02;margin:20px 0 14px;font-weight:900;color:#fff}
+  .hero h1 span{color:#ff8a4d}
+  .hero p{font-size:1.13rem;color:#c6d4e6;margin:0 0 26px;max-width:620px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 20px;border-radius:10px;font-weight:700;text-decoration:none;font-size:.98rem;border:1px solid transparent;cursor:pointer}
+  .btn-accent{background:var(--accent);color:#fff}
+  .btn-accent:hover{background:#d14f13}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .btn-ghost:hover{border-color:#fff}
+  .hero-facts{display:flex;gap:10px 26px;flex-wrap:wrap;margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:.92rem;color:#aebfd6}
+  .hero-facts b{color:#fff;display:block;font-size:1rem}
+
+  /* Sections */
+  section{padding:52px 0 8px}
+  .sec-head{max-width:680px;margin-bottom:24px}
+  .sec-head h2{font-size:1.7rem;margin:0 0 8px;font-weight:800}
+  .sec-head p{color:var(--ink-2);margin:0}
+
+  .grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
+  @media (max-width:820px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .card h3{margin:0 0 10px;font-size:1.08rem}
+  .card p{color:var(--ink-2);margin:0 0 12px}
+  .card p:last-child{margin-bottom:0}
+  dl.facts{margin:0;display:grid;gap:0}
+  dl.facts div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line)}
+  dl.facts div:last-child{border-bottom:0}
+  dl.facts dt{color:var(--muted);font-size:.9rem;font-weight:600}
+  dl.facts dd{margin:0;font-weight:600;text-align:right;font-size:.95rem}
+  .badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-soft);color:var(--green);font-weight:700;font-size:.8rem;padding:4px 10px;border-radius:999px}
+  .badge i{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+
+  /* Services list */
+  .svc{display:grid;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .svc-row{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:22px 24px;border-bottom:1px solid var(--line);align-items:start}
+  .svc-row:last-child{border-bottom:0}
+  .svc-num{font-family:"Archivo",sans-serif;font-weight:900;font-size:1.3rem;color:var(--accent);line-height:1.2}
+  .svc-row h3{margin:0 0 4px;font-size:1.05rem}
+  .svc-row p{margin:0;color:var(--ink-2)}
+
+  /* Apps */
+  .apps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:820px){.apps{grid-template-columns:1fr}}
+  .app{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .app .tag{align-self:flex-start;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-bottom:14px}
+  .tag-stream{background:#e8eefc;color:#2b4acb}
+  .tag-home{background:#e6f4ec;color:#177245}
+  .tag-game{background:#fdeee6;color:#c24e12}
+  @media (prefers-color-scheme: dark){
+    .tag-stream{background:#16294d;color:#8fb0ff}.tag-home{background:#12291e;color:#4cc38a}.tag-game{background:#2b1d14;color:#ff9a5c}
+  }
+  .app h3{margin:0 0 8px;font-size:1.15rem}
+  .app p{color:var(--ink-2);margin:0 0 18px;flex:1}
+  .app a.site{font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+  .app a.site:hover{text-decoration:underline}
+
+  /* Legal nav */
+  .legal-strip{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;box-shadow:var(--shadow)}
+  @media (max-width:720px){.legal-strip{grid-template-columns:1fr 1fr}}
+  .legal-strip button{appearance:none;border:1px solid transparent;background:transparent;color:var(--ink-2);font:inherit;font-weight:700;padding:12px 10px;border-radius:9px;cursor:pointer;min-height:48px}
+  .legal-strip button:hover{background:var(--surface-2)}
+  .legal-strip button[aria-selected="true"]{background:var(--navy);color:#fff}
+  @media (prefers-color-scheme: dark){.legal-strip button[aria-selected="true"]{background:var(--navy-2)}}
+
+  .doc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);margin-top:18px}
+  .doc h2{margin:0 0 6px;font-size:1.45rem}
+  .doc .updated{color:var(--muted);font-size:.9rem;margin:0 0 18px}
+  .doc h3{margin:22px 0 6px;font-size:1.02rem}
+  .doc p,.doc li{color:var(--ink-2)}
+  .doc ul{padding-left:20px;margin:6px 0}
+  .doc [hidden]{display:none}
+  .doc-panel[hidden]{display:none}
+
+  /* Contact */
+  .contact-band{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+  @media (max-width:720px){.contact-band{grid-template-columns:1fr}}
+  .contact-band h2{margin:0 0 6px;font-size:1.4rem}
+  .contact-band p{margin:0;color:var(--ink-2)}
+  .contact-lines{display:grid;gap:6px;margin-top:14px;font-size:.98rem}
+  .contact-lines a{font-weight:600}
+
+  footer{margin-top:56px;border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:.9rem}
+  .foot{display:flex;gap:14px 28px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+  .foot nav{display:flex;gap:4px;flex-wrap:wrap}
+  .foot nav a{color:var(--ink-2);text-decoration:none;padding:8px 10px;min-height:40px;display:inline-flex;align-items:center;font-weight:600}
+  .foot nav a:hover{color:var(--ink)}
+  .view[hidden]{display:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#/" data-nav>
+      <span class="mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2.5c.6 3.2-1.2 4.6-2.4 6C8.3 10.2 7.5 11.7 7.5 13.6A4.6 4.6 0 0 0 12 18.2a4.6 4.6 0 0 0 4.5-4.6c0-1.2-.5-2.3-1.1-3.3-.5.7-1.1 1.2-1.9 1.5.3-2.9-.4-6.4-1.5-9.3Z" fill="#ff7a33"/><circle cx="12" cy="19.8" r="1.7" fill="#fff"/></svg>
+      </span>
+      <span>VEROLUXY<small>LLC · Doral, Florida</small></span>
+    </a>
+    <nav class="main" aria-label="Principal">
+      <a href="#/" data-nav>Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#apps">Aplicaciones</a>
+      <a href="#/privacidad" data-nav>Privacidad</a>
+      <a href="#/soporte" data-nav>Soporte</a>
+      <a class="cta" href="mailto:veroluxymarketing@gmail.com">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ VISTA: INICIO ============ -->
+<main id="view-home" class="view">
+  <div class="hero">
+    <div class="wrap hero-in">
+      <span class="kicker"><i></i> Empresa registrada en Florida</span>
+      <h1>Veroluxy <span>LLC</span></h1>
+      <p>Diseño, fabricación y distribución desde Doral, Florida — y editora de aplicaciones y juegos para iOS y Android.</p>
+      <div class="hero-actions">
+        <a class="btn btn-accent" href="#apps">Ver nuestras aplicaciones</a>
+        <a class="btn btn-ghost" href="#/soporte" data-nav>Soporte y contacto</a>
+      </div>
+      <div class="hero-facts">
+        <div><b>Doral, FL</b>Sede principal</div>
+        <div><b>8272 NW 33 Terrace</b>Dirección registrada</div>
+        <div><b>3 aplicaciones</b>PeliLatina · Reel to Home · Tropical Fruits</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="nosotros">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Sobre Veroluxy LLC</h2>
+        <p>Una sola empresa, dos frentes: productos físicos bien hechos y productos digitales que la gente usa todos los días.</p>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <h3>Quiénes somos</h3>
+          <p>Veroluxy LLC es una compañía de diseño, fabricación y distribución con sede en Doral, Florida. Trabajamos con clientes corporativos en Estados Unidos y desarrollamos nuestras propias marcas digitales.</p>
+          <p>Como editora de aplicaciones, Veroluxy LLC es la empresa responsable de <strong>PeliLatina</strong>, <strong>Reel to Home</strong> y el juego <strong>Tropical Fruits: El Ladrón de Frutas</strong>, publicados bajo nuestra cuenta de desarrollador en Google Play y el App Store de Apple.</p>
+          <p>Este es el sitio web oficial de la organización para fines de verificación, soporte y políticas de nuestras aplicaciones.</p>
+        </div>
+        <div class="card">
+          <h3>Datos de la empresa</h3>
+          <dl class="facts">
+            <div><dt>Nombre legal</dt><dd>Veroluxy LLC</dd></div>
+            <div><dt>Estado</dt><dd><span class="badge"><i></i>Activa — Florida</span></dd></div>
+            <div><dt>Dirección principal</dt><dd>8272 NW 33 Terrace,<br>Doral, FL 33122</dd></div>
+            <div><dt>Registro (Sunbiz)</dt><dd>L26000203588</dd></div>
+            <div><dt>Fecha de registro</dt><dd>9 de abril de 2026</dd></div>
+            <div><dt>Correo de contacto</dt><dd><a href="mailto:veroluxymarketing@gmail.com">veroluxymarketing@gmail.com</a></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Qué hacemos</h2>
+      </div>
+      <div class="svc">
+        <div class="svc-row">
+          <div class="svc-num">01</div>
+          <div>
+            <h3>Diseño y fabricación</h3>
+            <p>Diseño, fabricación y distribución de productos y soluciones a medida para clientes corporativos, con operación en el sur de la Florida.</p>
+          </div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-num">02</div>
+          <div>
+            <h3>Productos digitales</h3>
+            <p>Desarrollo y publicación de aplicaciones móviles y juegos bajo nuestra propia cuenta de desarrollador, con soporte y políticas centralizados en este sitio.</p>
+          </div>
+        </div>
+        <div class="svc-row">
+          <div class="svc-num">03</div>
+          <div>
+            <h3>Distribución</h3>
+            <p>Distribución de nuestros productos y marcas en Estados Unidos, con atención directa a clientes y socios comerciales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Nuestras aplicaciones</h2>
+        <p>Todas nuestras apps se publican bajo la cuenta de desarrollador de Veroluxy LLC y comparten las políticas de esta página.</p>
+      </div>
+      <div class="apps">
+        <article class="app">
+          <span class="tag tag-stream">Streaming</span>
+          <h3>PeliLatina</h3>
+          <p>Películas, series y TV en vivo en español para la audiencia latina, con planes gratuitos con anuncios y suscripción sin anuncios.</p>
+          <a class="site" href="https://pelilatina.com" target="_blank" rel="noopener">pelilatina.com <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="app">
+          <span class="tag tag-home">Bienes raíces</span>
+          <h3>Reel to Home</h3>
+          <p>Propiedades del sur de la Florida en video corto: el agente graba, la app edita y el comprador descubre casas deslizando.</p>
+          <a class="site" href="https://reeltohome.com" target="_blank" rel="noopener">reeltohome.com <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="app">
+          <span class="tag tag-game">Juego</span>
+          <h3>Tropical Fruits: El Ladrón de Frutas</h3>
+          <p>Juego casual de frutas tropicales: supera niveles, esquiva al ladrón de frutas y compite por el mejor puntaje.</p>
+          <a class="site" href="https://tropicalfruitsgame.com" target="_blank" rel="noopener">tropicalfruitsgame.com <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Políticas y soporte</h2>
+        <p>Las políticas que aplican a todas las aplicaciones de Veroluxy LLC, en un solo lugar.</p>
+      </div>
+      <div class="legal-strip" role="tablist" aria-label="Documentos legales">
+        <button role="tab" data-doc="privacidad" aria-selected="false">Privacidad</button>
+        <button role="tab" data-doc="terminos" aria-selected="false">Términos</button>
+        <button role="tab" data-doc="soporte" aria-selected="false">Soporte</button>
+        <button role="tab" data-doc="eliminar" aria-selected="false">Eliminar cuenta</button>
+      </div>
+      <div class="doc" id="doc-home"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="contact-band">
+        <div>
+          <h2>Contacto y reclamos</h2>
+          <p>Para soporte de aplicaciones, cualquier reclamo, preguntas comerciales o verificación de la organización, escríbenos a:</p>
+          <div class="contact-lines">
+            <span>📍 8272 NW 33 Terrace, Doral, FL 33122, Estados Unidos</span>
+            <span>✉️ <a href="mailto:veroluxymarketing@gmail.com">veroluxymarketing@gmail.com</a></span>
+          </div>
+        </div>
+        <a class="btn btn-accent" href="mailto:veroluxymarketing@gmail.com">Escribir un correo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ VISTA: DOCUMENTO LEGAL ============ -->
+<main id="view-doc" class="view" hidden>
+  <section style="padding-top:36px">
+    <div class="wrap">
+      <div class="legal-strip" role="tablist" aria-label="Documentos legales">
+        <button role="tab" data-doc="privacidad" aria-selected="false">Privacidad</button>
+        <button role="tab" data-doc="terminos" aria-selected="false">Términos</button>
+        <button role="tab" data-doc="soporte" aria-selected="false">Soporte</button>
+        <button role="tab" data-doc="eliminar" aria-selected="false">Eliminar cuenta</button>
+      </div>
+      <div class="doc" id="doc-page"></div>
+      <p style="margin-top:18px"><a href="#/" data-nav style="font-weight:700;text-decoration:none">← Volver al inicio</a></p>
+    </div>
+  </section>
+</main>
+
+<!-- Plantillas de documentos (se inyectan en ambas vistas) -->
+<template id="tpl-privacidad">
+  <h2>Política de Privacidad</h2>
+  <p class="updated">Veroluxy LLC · Última actualización: 23 de noviembre de 2026</p>
+  <p>Esta política aplica a todas las aplicaciones publicadas por Veroluxy LLC (PeliLatina, Reel to Home y Tropical Fruits: El Ladrón de Frutas, en conjunto «las Aplicaciones») y a este sitio web.</p>
+  <h3>1. Datos que recopilamos</h3>
+  <ul>
+    <li><strong>Datos de cuenta:</strong> nombre y correo electrónico cuando creas una cuenta o nos contactas.</li>
+    <li><strong>Datos de uso:</strong> niveles alcanzados, puntajes, contenido visto y preferencias dentro de cada Aplicación.</li>
+    <li><strong>Datos del dispositivo:</strong> modelo, sistema operativo e identificadores de publicidad, usados para funcionamiento y medición.</li>
+    <li><strong>Datos de pago:</strong> las compras y suscripciones se procesan a través de Google Play o el App Store de Apple; no almacenamos los datos de tu tarjeta.</li>
+  </ul>
+  <h3>2. Cómo usamos los datos</h3>
+  <ul>
+    <li>Operar las Aplicaciones y guardar tu progreso y preferencias.</li>
+    <li>Mostrar publicidad en las versiones gratuitas y medir su rendimiento.</li>
+    <li>Responder mensajes de soporte y mejorar nuestros productos.</li>
+  </ul>
+  <h3>3. Publicidad y terceros</h3>
+  <p>Las versiones gratuitas muestran anuncios servidos por Google AdMob, que puede usar el identificador de publicidad de tu dispositivo para mostrar anuncios y medir resultados. Puedes limitar el seguimiento publicitario desde los ajustes de tu dispositivo. No vendemos tus datos personales.</p>
+  <h3>4. Conservación y eliminación</h3>
+  <p>Conservamos los datos de cuenta mientras tu cuenta esté activa. Puedes pedir la eliminación de tu cuenta y de los datos asociados en cualquier momento desde la sección <a href="#/eliminar" data-nav>Eliminar cuenta</a> de este sitio.</p>
+  <h3>5. Menores</h3>
+  <p>Nuestras Aplicaciones no están dirigidas a menores de 13 años y no recopilamos a sabiendas datos de menores de esa edad.</p>
+  <h3>6. Contacto</h3>
+  <p>Veroluxy LLC · 8272 NW 33 Terrace, Doral, FL 33122, EE. UU. · <a href="mailto:veroluxymarketing@gmail.com">veroluxymarketing@gmail.com</a></p>
+</template>
+
+<template id="tpl-terminos">
+  <h2>Términos de Servicio</h2>
+  <p class="updated">Veroluxy LLC · Última actualización: 23 de noviembre de 2026</p>
+  <p>Al usar cualquier aplicación publicada por Veroluxy LLC aceptas estos términos.</p>
+  <h3>1. El servicio</h3>
+  <p>Veroluxy LLC ofrece aplicaciones de entretenimiento, bienes raíces y juegos. Algunas funciones son gratuitas con publicidad y otras requieren suscripción o compra dentro de la app, procesadas por Google Play o el App Store de Apple según sus propias condiciones.</p>
+  <h3>2. Tu cuenta</h3>
+  <p>Eres responsable de la actividad realizada desde tu cuenta y de mantener la confidencialidad de tu acceso. Podemos suspender cuentas que incumplan estos términos o la ley.</p>
+  <h3>3. Uso aceptable</h3>
+  <ul>
+    <li>No usar las Aplicaciones con fines ilícitos ni para infringir derechos de terceros.</li>
+    <li>No intentar acceder sin autorización a nuestros sistemas ni interferir con el servicio.</li>
+    <li>El contenido mostrado (videos, propiedades, partidas) es solo para uso personal dentro de cada Aplicación.</li>
+  </ul>
+  <h3>4. Reembolsos</h3>
+  <p>Los reembolsos de compras y suscripciones se rigen por la política de la tienda donde se hizo la compra (Google Play o App Store).</p>
+  <h3>5. Responsabilidad</h3>
+  <p>Las Aplicaciones se ofrecen «tal cual». En la medida que permite la ley, Veroluxy LLC no será responsable por daños indirectos derivados del uso del servicio.</p>
+  <h3>6. Contacto</h3>
+  <p>Veroluxy LLC · 8272 NW 33 Terrace, Doral, FL 33122, EE. UU. · <a href="mailto:veroluxymarketing@gmail.com">veroluxymarketing@gmail.com</a></p>
+</template>
+
+<template id="tpl-soporte">
+  <h2>Soporte</h2>
+  <p class="updated">Veroluxy LLC · Respondemos en días laborables</p>
+  <p>¿Problemas con alguna de nuestras aplicaciones? ¿Necesitas hacer un reclamo? Escríbenos a <a href="mailto:veroluxymarketing@gmail.com">veroluxymarketing@gmail.com</a> y te ayudamos.</p>
+  <h3>Cómo contactarnos</h3>
+  <ul>
+    <li><strong>Correo:</strong> <a href="mailto:veroluxymarketing@gmail.com">veroluxymarketing@gmail.com</a></li>
+    <li><strong>Dirección:</strong> Veroluxy LLC, 8272 NW 33 Terrace, Doral, FL 33122, EE. UU.</li>
+  </ul>
+  <h3>Para ayudarte más rápido, incluye</h3>
+  <ul>
+    <li>La aplicación que usas (PeliLatina, Reel to Home o Tropical Fruits).</li>
+    <li>Tu dispositivo y la versión de la app.</li>
+    <li>Una descripción breve del problema y, si puedes, una captura de pantalla.</li>
+  </ul>
+  <h3>Temas frecuentes</h3>
+  <ul>
+    <li><strong>Compras y suscripciones:</strong> se gestionan desde tu cuenta de Google Play o del App Store; si un cargo no se reconoce, escríbenos con la fecha de la compra.</li>
+    <li><strong>Eliminar tu cuenta:</strong> sigue los pasos de la sección <a href="#/eliminar" data-nav>Eliminar cuenta</a>.</li>
+    <li><strong>Privacidad:</strong> consulta nuestra <a href="#/privacidad" data-nav>Política de Privacidad</a>.</li>
+  </ul>
+</template>
+
+<template id="tpl-eliminar">
+  <h2>Eliminar tu cuenta</h2>
+  <p class="updated">Veroluxy LLC · PeliLatina · Reel to Home · Tropical Fruits</p>
+  <p>Puedes eliminar la aplicación de tu dispositivo en cualquier momento desde los ajustes del sistema. Ten en cuenta que desinstalar la app no borra tu cuenta ni los datos guardados en nuestros servidores: para eliminar también tu cuenta y todos tus datos, sigue estos pasos:</p>
+  <h3>Opción 1 — Desde la aplicación</h3>
+  <ul>
+    <li>Abre la aplicación e inicia sesión.</li>
+    <li>Ve a <strong>Perfil → Ajustes → Eliminar cuenta</strong>.</li>
+    <li>Confirma la eliminación. Tu cuenta y tu progreso se borran de forma permanente.</li>
+  </ul>
+  <h3>Opción 2 — Por correo</h3>
+  <ul>
+    <li>Escribe a <a href="mailto:veroluxymarketing@gmail.com?subject=Eliminar%20mi%20cuenta">veroluxymarketing@gmail.com</a> desde el correo de tu cuenta, con el asunto «Eliminar mi cuenta» e indicando la aplicación.</li>
+    <li>Procesamos la solicitud en un plazo máximo de 30 días y te confirmamos por correo cuando esté completa.</li>
+  </ul>
+  <h3>Qué se elimina</h3>
+  <p>Se eliminan tu perfil, tu progreso, tus puntajes y tus preferencias. Podemos conservar registros mínimos cuando la ley lo exige (por ejemplo, comprobantes de transacciones ya facturadas por la tienda). Las suscripciones activas deben cancelarse además desde Google Play o el App Store, porque las gestiona la tienda.</p>
+</template>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong style="color:var(--ink)">Veroluxy LLC</strong><br>
+      8272 NW 33 Terrace, Doral, FL 33122, Estados Unidos<br>
+      © 2026 Veroluxy LLC. Todos los derechos reservados.
+    </div>
+    <nav aria-label="Legal">
+      <a href="#/privacidad" data-nav>Privacidad</a>
+      <a href="#/terminos" data-nav>Términos</a>
+      <a href="#/soporte" data-nav>Soporte</a>
+      <a href="#/eliminar" data-nav>Eliminar cuenta</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var DOCS = { privacidad:1, terminos:1, soporte:1, eliminar:1 };
+  var homeView = document.getElementById('view-home');
+  var docView  = document.getElementById('view-doc');
+  var docHome  = document.getElementById('doc-home');
+  var docPage  = document.getElementById('doc-page');
+  var current  = 'privacidad';
+
+  function fill(target, name){
+    var tpl = document.getElementById('tpl-' + name);
+    target.innerHTML = '';
+    if (tpl) target.appendChild(tpl.content.cloneNode(true));
+    bindNav(target);
+  }
+  function markTabs(name){
+    var tabs = document.querySelectorAll('[data-doc]');
+    for (var i=0;i<tabs.length;i++){
+      tabs[i].setAttribute('aria-selected', tabs[i].getAttribute('data-doc')===name ? 'true' : 'false');
+    }
+  }
+  function show(name, onPage){
+    if (!DOCS[name]) name = 'privacidad';
+    current = name;
+    fill(docHome, name);
+    fill(docPage, name);
+    markTabs(name);
+    homeView.hidden = onPage;
+    docView.hidden = !onPage;
+    window.scrollTo(0,0);
+  }
+  function route(){
+    var h = location.hash.replace(/^#\/?/, '');
+    if (DOCS[h]) { show(h, true); }
+    else { show(current, false); }
+  }
+  function bindNav(scope){
+    var links = (scope||document).querySelectorAll('[data-nav]');
+    for (var i=0;i<links.length;i++){
+      if (links[i]._bound) continue;
+      links[i]._bound = true;
+      /* hash links work natively; nothing else needed */
+    }
+  }
+  var tabBtns = document.querySelectorAll('[data-doc]');
+  for (var i=0;i<tabBtns.length;i++){
+    tabBtns[i].addEventListener('click', function(){
+      var name = this.getAttribute('data-doc');
+      var onPage = !docView.hidden;
+      if (onPage) { location.hash = '#/' + name; }
+      else { show(name, false); }
+    });
+  }
+  window.addEventListener('hashchange', route);
+  bindNav(document);
+  route();
+})();
+</script>
+</body>
+</html>
